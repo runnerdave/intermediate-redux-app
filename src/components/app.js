@@ -3,6 +3,7 @@ import _ from 'lodash';
 
 import SearchBar from '../containers/search_bar';
 import WeatherList from '../containers/weather_list';
+import CountriesFilter from '../containers/countries_filter';
 
 import resources from '../resources';
 
@@ -16,13 +17,13 @@ export default class App extends Component {
         const area = _.get(country, 'area');
         const text = _.find(resources.app_text, headers => headers.language === LANGUAGE);
         this.header = _.get(text, 'table_headers');
-        this.placeholder = _.get(text, 'search-placeholder').replace('AREA', area);
+        this.placeholder = _.get(text, 'search-placeholder').replace('#AREA#', area);
     }
 
     render() {
-
         return (
             <div>
+                <CountriesFilter />
                 <SearchBar placeholder={this.placeholder} country={COUNTRY}/>
                 <WeatherList headers={this.header}/>
             </div>

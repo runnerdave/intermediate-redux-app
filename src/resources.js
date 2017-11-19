@@ -24,16 +24,19 @@ const resources = {
     "countries": [
         {
             "code": "au",
-            "area": "australian"
+            "area": "australian",
+            "name": "Australia"
         }
         ,
         {
             "code": "ve",
-            "area": "venezolanas"
+            "area": "venezolanas",
+            "name": "Venezuela"
         },
         {
             "code": "us",
-            "area": "american"
+            "area": "american",
+            "name": "USA"
         }
     ]
 };
