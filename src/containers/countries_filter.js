@@ -9,17 +9,18 @@ class CountriesFilter extends Component {
     }
 
     renderCountries() {
-        console.info('Countries props:', this.props);
-        // return this.props.countries.map((country) => {
-        //         <span key={country.code}> {country.name} </span>
-        //     }
-        // );
+        console.info('Countries props:', this.props.countries);
+        return this.props.countries.map((country) => (
+                <span key={country.code}> {country.name} </span>
+            )
+        );
+        // return `hola: ${this.props.countries[0]}`;
     }
 
     render() {
         return (
-            <div>
-                hola{this.renderCountries()}
+            <div className="CountriesFilter">
+                {this.renderCountries()}
             </div>
         );
     }
@@ -32,7 +33,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({fetchCountries: fetchCountries}, dispatch);
+    return bindActionCreators({fetchCountries}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CountriesFilter);
