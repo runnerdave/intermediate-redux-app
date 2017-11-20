@@ -9,12 +9,10 @@ class CountriesFilter extends Component {
     }
 
     renderCountries() {
-        console.info('Countries props:', this.props.countries);
         return this.props.countries.map((country) => (
                 <span key={country.code}> {country.name} </span>
             )
         );
-        // return `hola: ${this.props.countries[0]}`;
     }
 
     render() {

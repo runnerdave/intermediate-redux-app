@@ -21,7 +21,6 @@ export function fetchWeather(city, country) {
 
 export function fetchCountries() {
     const payload = resources.countries;
-    console.info('action payload:', payload);
 
     return {
         type: FETCH_COUNTRIES,
