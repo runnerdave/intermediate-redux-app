@@ -4,20 +4,25 @@ import { fetchCountries } from "../actions/index";
 import { bindActionCreators } from "redux";
 
 class CountriesFilter extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchCountries();
     }
 
     renderCountries() {
-        return this.props.countries.map((country) => (
-                <span key={country.code}> {country.name} </span>
+        return this.props.countries.map((country, i) => (
+                <span>
+                    {!!i && " | "}
+                    <span key={country.code}
+                      className={country.code === this.props.countryCode ? 'important' : 'not-so-important'}> {country.name}
+                    </span>
+                </span>
             )
         );
     }
 
     render() {
         return (
-            <div className="CountriesFilter">
+            <div>
                 {this.renderCountries()}
             </div>
         );

@@ -23,9 +23,9 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <CountriesFilter />
-                <SearchBar placeholder={this.placeholder} country={COUNTRY}/>
-                <WeatherList headers={this.header}/>
+                <CountriesFilter countryCode={COUNTRY} />
+                <SearchBar placeholder={this.placeholder} country={COUNTRY} />
+                <WeatherList headers={this.header} />
             </div>
         );
     }
