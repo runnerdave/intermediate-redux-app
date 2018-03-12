@@ -8,7 +8,7 @@ import CountriesFilter from '../containers/countries_filter';
 import resources from '../resources';
 
 const COUNTRY = 've';
-const LANGUAGE = 'en';
+const LANGUAGE = 'es';
 
 export default class App extends Component {
     constructor(props) {
